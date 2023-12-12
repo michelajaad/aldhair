@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuerdos de Aldhair</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Hello+Avocado:wght@500&display=swap">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: url('C:\\Users\\karit\\Downloads\\Imagen de WhatsApp 2023-12-11 a las 20.41.32_7485a8ad.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Hello Avocado', sans-serif;
+      color: #4a90e2; /* Azul Rey */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    #teQuieroTexto {
+      font-size: 48px; /* Letras más grandes */
+      margin-bottom: 20px;
+      color: #4a90e2; /* Azul Rey */
+      position: relative;
+      animation: flores 5s ease-out forwards;
+    }
+
+    @keyframes flores {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #botonRecuerdos {
+      font-family: 'Hello Avocado', sans-serif;
+      font-size: 16px;
+      background-color: #ff9bcd; /* Rosita */
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    #recuerdos {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .imagenRecuerdo {
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #visorImagen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    #imagenSeleccionada {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    #flores {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Flores de inicio -->
+  <img id="flores" src="C:\Users\karit\Downloads\descarga-removebg-preview.png" alt="Flores">
+
+  <!-- Texto de Te Quiero Aldhair -->
+  <div id="teQuieroTexto">Te quiero mucho Aldhair</div>
+
+  <!-- Botón para mostrar recuerdos -->
+  <button id="botonRecuerdos" onclick="mostrarRecuerdos()">Ver Recuerdos</button>
+
+  <!-- Contenedor de recuerdos (galería) -->
+  <div id="recuerdos">
+    <img class="imagenRecuerdo" src="C:\Users\karit\Downloads\Imagen de WhatsApp 2023-12-11 a las 20.45.37_c11fef78.jpg" alt="Recuerdo 1" onclick="mostrarImagen(this.src)">
+    <img class="imagenRecuerdo" src="C:\Users\karit\Downloads\Imagen de WhatsApp 2023-12-11 a las 20.45.37_118e6da8.jpg" alt="Recuerdo 2" onclick="mostrarImagen(this.src)">
+    <img class="imagenRecuerdo" src="C:\Users\karit\Downloads\Imagen de WhatsApp 2023-12-11 a las 20.45.37_3a8901f0.jpg" alt="Recuerdo 3" onclick="mostrarImagen(this.src)">
+    <img class="imagenRecuerdo" src="C:\Users\karit\Downloads\Imagen de WhatsApp 2023-12-11 a las 20.45.37_4ad65b83.jpg" alt="Recuerdo 4" onclick="mostrarImagen(this.src)">
+    <img class="imagenRecuerdo" src="C:\Users\karit\Downloads\Imagen de WhatsApp 2023-12-11 a las 20.45.37_a3db35d6.jpg" alt="Recuerdo 5" onclick="mostrarImagen(this.src)">
+    <img class="imagenRecuerdo" src="C:\Users\karit\Downloads\Imagen de WhatsApp 2023-12-11 a las 20.45.37_0ed13c79.jpg" alt="Recuerdo 6" onclick="mostrarImagen(this.src)">
+    <img class="imagenRecuerdo" src="C:\Users\karit\Downloads\Imagen de WhatsApp 2023-12-11 a las 20.45.37_39e3ba50.jpg" alt="Recuerdo 7" onclick="mostrarImagen(this.src)">
+  </div>
+
+  <!-- Visor de imagen -->
+  <div id="visorImagen" onclick="cerrarVisor()">
+    <img id="imagenSeleccionada" src="" alt="Imagen seleccionada">
+  </div>
+
+  <script>
+    function mostrarRecuerdos() {
+      var recuerdos = document.getElementById('recuerdos');
+      recuerdos.style.display = 'flex';
+    }
+
+    function mostrarImagen(src) {
+      var visorImagen = document.getElementById('visorImagen');
+      var imagenSeleccionada = document.getElementById('imagenSeleccionada');
+      imagenSeleccionada.src = src;
+      visorImagen.style.display = 'flex';
+    }
+
+    function cerrarVisor() {
+      var visorImagen = document.getElementById('visorImagen');
+      visorImagen.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
